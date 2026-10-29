@@ -1,5 +1,6 @@
 package model.dao.impl;
 
+import java.sql.Connection;
 import java.util.List;
 
 import model.dao.SellerDao;
@@ -7,6 +8,12 @@ import model.entities.Seller;
 
 public class SellerDaoJDBC implements SellerDao {
 
+	private Connection conn;
+	
+	public SellerDaoJDBC(Connection conn) {
+		this.conn = conn;
+	}
+	
 	@Override
 	public void insert(Seller obj) {
 		
